@@ -10,7 +10,7 @@ basis of Sovendus' billing. The generic token value is generated dynamically for
 call. This token value must be cached and transmitted back to Sovendus after the order completion on your landing 
 page through the call of the billing pixel on your order completion or thank you page. 
 
-> [!Warning] \
+> [!WARNING] \
 > The basic prerequisite for successful cooperation is the correct return of the token value. 
 If the token value is transmitted incorrectly or not at all, the Sovendus algorithm stops to work. Your offer will not be  displayed within a short period of time.
 
@@ -24,19 +24,19 @@ and changes with every click on the offer.
 From the URL, you must transfer the token value, cache it temporarily, and output it via the billing pixel after the 
 order is completed.
 
-> [!Example] \
+> [!EXAMPLE] \
 > <mark>https://partner.domain/path-to-landing-page?param=value</mark>&sovReqToken=<span style="color:lightgreen">1095752fb409-457a-af14-17a09e6be522</span>
 > 
 > **Caption:**\
 > Your landing page. URL: <mark>https://partner.domain/path-to-landing-page?param=value</mark> \
 Token value (variable with each call): <span style="color:lightgreen">1095752fb409-457a-af14-17a09e6be522</span>
 
-> [!Warning] \
+> [!WARNING] \
 > The parameter "sovReqToken" can also be renamed. \
 > Please inform your Sovendus contact person about this.
 
 ## 4. The billing pixel
-> [!Example] \
+> [!EXAMPLE] \
 > ```<img src="https://press-order-api.sovendus.com/ext/```<span style="color:lightblue">9bc72425-902c-3abf-9db8-8b186d7cb160</span>```/image?sovReqToken=```<span style="color:lightgreen">1095752fb409-457a-af14-17a09e6be522</span>" />
 >
 > **Caption:**\
@@ -48,6 +48,6 @@ The Sovendus billing pixel must be included on your order completion or thank yo
 
 The product ID must be permanently stored, and in addition the cached token value (by default "sovReqToken"), which was appended to the URL when your landing page was called, must be transmitted back to Sovendus via the billing pixel.
 
-> [!Warning] \
+> [!WARNING] \
 > The "sovReqToken" parameter must be passed in the billing pixel. \
 > Other parameters cannot be processed by Sovendus.
