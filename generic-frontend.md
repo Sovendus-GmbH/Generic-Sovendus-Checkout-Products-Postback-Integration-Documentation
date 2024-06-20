@@ -28,7 +28,7 @@ and changes with every click on the offer.
 From the URL, you must transfer the token value, cache it temporarily, and output it via the billing pixel after the
 order is completed.
 
-> [!EXAMPLE] 
+> [!EXAMPLE]
 > `https://partner.domain/path-to-landing-page?param=value&sovReqToken=1095752fb409-457a-af14-17a09e6be522`
 
 ### Caption:
