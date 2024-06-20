@@ -29,7 +29,7 @@ From the URL, you must transfer the token value, cache it temporarily, and outpu
 order is completed.
 
 > [!EXAMPLE]
-> https://partner.domain/path-to-landing-page?param=value&sovReqToken=1095752fb409-457a-af14-17a09e6be522
+> partner.domain/path-to-landing-page?param=value&sovReqToken=1095752fb409-457a-af14-17a09e6be522
 
 ### Caption:
 
