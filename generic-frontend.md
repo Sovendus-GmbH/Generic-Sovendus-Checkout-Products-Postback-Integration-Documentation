@@ -12,7 +12,7 @@ page through the call of the billing pixel on your order completion or thank you
 
 > [!WARNING]
 > The basic prerequisite for successful cooperation is the correct return of the token value. 
-If the token value is transmitted incorrectly or not at all, the Sovendus algorithm stops to work. Your offer will not be  displayed within a short period of time.
+> If the token value is transmitted incorrectly or not at all, the Sovendus algorithm stops to work. Your offer will not be  displayed within a short period of time.
 
 ## 2. External Product-ID 
 For each campaign, Sovendus creates a fixed Product ID, which must be permanently stored when the billing pixel is 
