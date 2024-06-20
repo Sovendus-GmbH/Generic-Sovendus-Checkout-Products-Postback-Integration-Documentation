@@ -28,12 +28,12 @@ and changes with every click on the offer.
 From the URL, you must transfer the token value, cache it temporarily, and output it via the billing pixel after the
 order is completed.
 
-> [!EXAMPLE] >
+> [!EXAMPLE] 
 > `https://partner.domain/path-to-landing-page?param=value&sovReqToken=1095752fb409-457a-af14-17a09e6be522`
 
 ### Caption:
 
-**Your landing page. URL:** https://partner.domain/path-to-landing-page?param=value
+**Your landing page. URL:** partner.domain/path-to-landing-page?param=value \
 **Token value (variable with each call):** 1095752fb409-457a-af14-17a09e6be522<
 
 > [!WARNING]
@@ -50,7 +50,7 @@ order is completed.
 
 ### Caption:
 
-**External Product-ID:** 9bc72425-902c-3abf-9db8-8b186d7cb160\
+**External Product-ID:** 9bc72425-902c-3abf-9db8-8b186d7cb160 \
 **Token value (variable with each call):** 1095752fb409-457a-af14-17a09e6be522
 
 ## 5. Integration of the billing pixel
