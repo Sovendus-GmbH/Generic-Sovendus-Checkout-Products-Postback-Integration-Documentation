@@ -27,12 +27,12 @@ order is completed.
 > [!EXAMPLE]
 > <mark>https://partner.domain/path-to-landing-page?param=value</mark>&sovReqToken=<span style="color:lightgreen">1095752fb409-457a-af14-17a09e6be522</span>
 > 
-> **Caption:**\
-> Your landing page. URL: <mark>https://partner.domain/path-to-landing-page?param=value</mark> \
+> **Caption:**
+> Your landing page. URL: <mark>https://partner.domain/path-to-landing-page?param=value</mark>
 Token value (variable with each call): <span style="color:lightgreen">1095752fb409-457a-af14-17a09e6be522</span>
 
 > [!WARNING]
-> The parameter "sovReqToken" can also be renamed. \
+> The parameter "sovReqToken" can also be renamed.
 > Please inform your Sovendus contact person about this.
 
 ## 4. The billing pixel
@@ -49,5 +49,5 @@ The Sovendus billing pixel must be included on your order completion or thank yo
 The product ID must be permanently stored, and in addition the cached token value (by default "sovReqToken"), which was appended to the URL when your landing page was called, must be transmitted back to Sovendus via the billing pixel.
 
 > [!WARNING]
-> The "sovReqToken" parameter must be passed in the billing pixel. \
+> The "sovReqToken" parameter must be passed in the billing pixel.
 > Other parameters cannot be processed by Sovendus.
