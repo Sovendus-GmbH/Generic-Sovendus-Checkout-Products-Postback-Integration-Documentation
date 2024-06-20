@@ -34,7 +34,7 @@ order is completed.
 ### Caption:
 
 **Your landing page. URL:** partner.domain/path-to-landing-page?param=value \
-**Token value (variable with each call):** 1095752fb409-457a-af14-17a09e6be522<
+**Token value (variable with each call):** 1095752fb409-457a-af14-17a09e6be522
 
 > [!WARNING]
 > The parameter "sovReqToken" can also be renamed.
