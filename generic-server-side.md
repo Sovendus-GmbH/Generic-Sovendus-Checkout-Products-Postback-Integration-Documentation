@@ -32,6 +32,6 @@ You receive this Product-ID from your contact at Sovendus or you can learn it fr
 With every click on your product teaser image an ampersand (&) and the parameter sovReqToken will be added to the URL of your landing page by default. The alphanumerical value of the sovReqToken parameter is dynamic and changes with every new click on your product. The token has to be picked out of the URL by you, buffered and transferred back to Sovendus via API call after completion of the transaction.
 
 > [!WARNING]
-> <span style="color: blue;">https://www.website.com/landingpage?channel=sovendus</span><span style="color: red;">&sovReqToken=XXXXX-XXXXX-XXX-XXXXX</span>
+> <span style="background-color: blue; color: black;">https://www.website.com/landingpage?channel=sovendus</span><span style="background-color: red; color: black;">&sovReqToken=XXXXX-XXXXX-XXX-XXXXX</span>
 >
-> <mark>URL of your landingpage</mark> $${\color{red}Token}$$
+> <span style="background-color: blue; color: black;">URL of your landingpage</span> <span style="background-color: red; color: black;">Token</span>
