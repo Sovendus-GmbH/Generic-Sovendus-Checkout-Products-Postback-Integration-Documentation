@@ -34,4 +34,4 @@ With every click on your product teaser image an ampersand (&) and the parameter
 > [!WARNING]
 > <span style="color: blue;">https://www.website.com/landingpage?channel=sovendus</span><span style="color: red;">&sovReqToken=XXXXX-XXXXX-XXX-XXXXX</span>
 >
-> <span style="color: blue;">URL of your landingpage</span> <span style="color: red;">token</span> <span style="color: red;">Token</span>
+> $${\color{blue}URL of your landingpage}$$ $${\color{red}Token}$$
