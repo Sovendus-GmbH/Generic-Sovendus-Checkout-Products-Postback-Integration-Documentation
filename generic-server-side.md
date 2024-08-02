@@ -6,7 +6,7 @@ Sovendus displays your product following some transaction process (e.g. order ch
 To achieve this, Sovendus transfers a generic token with any request of your landing page URL. This token is the base of order registration at Sovendus. It is generated dynamically and therefore changes with every request. This token has to be picked out of the URL of your landing page, buffered und returned to Sovendus via a simple API call after completion of the transaction.
 
 > [!TIP]
-> Prerequisite for a successful cooperation is the return transfer of the token.
+> Prerequisite for a successful cooperation is the return transfer of the token.  
 > Without a proper back transfer, the Sovendus algorithm is not able to handle your product as intended. As a
 > result, your product won’t be displayed on our advertising partners‘ pages any more, just few days after.
 
@@ -36,7 +36,7 @@ With every click on your product teaser image an ampersand (&) and the parameter
 > [!EXAMPLE]
 > https://www.website.com/landingpage?channel=sovendus&sovReqToken=XXXXX-XXXXX-XXX-XXXXX
 >
-> URL of your landingpage: https://www.website.com/landingpage?channel=sovendus
+> URL of your landingpage: https://www.website.com/landingpage?channel=sovendus  
 > Token: sovReqToken=XXXXX-XXXXX-XXX-XXXXX
 
 > [!TIP]
@@ -49,19 +49,19 @@ With every click on your product teaser image an ampersand (&) and the parameter
 >        - 11111-test-111-11111
 >        - fffff-test-fff-fffff
 >        - 12345-test-123-12345
->        - 1a2b3-test-1a2-1a2b3
+>        - 1a2b3-test-1a2-1a2b3  
 > If the test token and all other parameters are valid, the API will return the regular 200 response.
 
 ## 6. API call
 
 > [!TIP]
-> Please use the API call **exclusively** for server-to-server connections.
+> Please use the API call **exclusively** for server-to-server connections.  
 > On no account can there be any requests from browsers of end customers.
 
 The URL of the API call is composed as follows:
-> https://press-order-api.sovendus.com/ext/**externalProduct-ID**/**token**/api
+> https://press-order-api.sovendus.com/ext/<b>externalProduct-ID</b>/<b>token</b>/api
 >
-> **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)
+> **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)  
 > **token**: Enter token transferred by Sovendus (paragraph 5)
 
 The HTTP procedure of the interface request has to be POST.<br> <br>
