@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.
+Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.\ \
 To achieve this, Sovendus transfers a generic token with any request of your landing page URL. This token is the base of order registration at Sovendus. It is generated dynamically and therefore changes with every request. This token has to be picked out of the URL of your landing page, buffered und returned to Sovendus via a simple API call after completion of the transaction.
 
 > [!TIP]
@@ -26,20 +26,21 @@ Please keep your login credentials confidential. If you received this documentat
 
 ## 4. External Product-ID
 
-Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.
+Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.\ \
 You receive this Product-ID from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
 ## 5. Token
 
-With every click on your product teaser image an ampersand (&) and the parameter sovReqToken will be added to the URL of your landing page by default. The alphanumerical value of the sovReqToken parameter is dynamic and changes with every new click on your product. The token has to be picked out of the URL by you, buffered and transferred back to Sovendus via API call after completion of the transaction.
+With every click on your product teaser image an ampersand (&) and the parameter **sovReqToken** will be added to the URL of your landing page by default. The alphanumerical value of the sovReqToken parameter is dynamic and changes with every new click on your product. The token has to be picked out of the URL by you, buffered and transferred back to Sovendus via API call after completion of the transaction.
 
-> [!WARNING]
-> <span style="background-color: blue; color: black;">https://www.website.com/landingpage?channel=sovendus</span><span style="background-color: red; color: black;">&sovReqToken=XXXXX-XXXXX-XXX-XXXXX</span>
+> [!EXAMPLE]
+> https://www.website.com/landingpage?channel=sovendus&sovReqToken=XXXXX-XXXXX-XXX-XXXXX
 >
-> <span style="background-color: blue; color: black;">URL of your landingpage</span> <span style="background-color: red; color: black;">Token</span>
+> URL of your landingpage: https://www.website.com/landingpage?channel=sovendus
+> Token: sovReqToken=XXXXX-XXXXX-XXX-XXXXX
 
 > [!TIP]
-> The parameter sovReqToken can be renamed by request. Please inform Sovendus about this.
+> The parameter **sovReqToken** can be renamed by request. Please inform Sovendus about this.
 
 > Syntax of token value
 >    - The test token should have the structure of a regular token (aaaaa-aaaa-aaa-aaaaa)
@@ -54,25 +55,35 @@ With every click on your product teaser image an ampersand (&) and the parameter
 ## 6. API call
 
 > [!TIP]
-> Please use the API call exclusively for server-to-server connections.
+> Please use the API call **exclusively** for server-to-server connections.
 > On no account can there be any requests from browsers of end customers.
 
 The URL of the API call is composed as follows:
-> https://press-order-api.sovendus.com/ext/externalProduct-ID/token/api
+> https://press-order-api.sovendus.com/ext/**externalProduct-ID**/**token**/api
 >
-> Enter external Product-ID of corresponding product campaign (paragraph 4)
-> Enter token transferred by Sovendus (paragraph 5)
+> **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)
+> **token**: Enter token transferred by Sovendus (paragraph 5)
 
-The HTTP procedure of the interface request has to be POST.
+The HTTP procedure of the interface request has to be POST.\ \
 To authentificate the API call, an alphanumerical API key is required additionally to the parameters within the URL. This key is transferred within the request body of the request. You receive this API key directly from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
-> [!WARNING]
-> Content-Type: application/json
-> {
-> "apiKey":"XXXX-XXXXX-XXXXXX-XXX"
+> [!EXAMPLE]
+> Content-Type: application/json  
+> {  
+> "apiKey":"XXXX-XXXXX-XXXXXX-XXX"  
 > }
 
 ## 7. Response
+
+| HTTP – Status | Description |
+|----------------------|----------------------|
+| 200 OK | To succesful requests the API responds with the external Product-ID and the token from the URL. \ \ Content-Type: application/json \ { \ "externalProductId":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" \ "sovReqToken":"XXXXXX-XXXXX-XXXX-XXXXXXX" \ }|
+| 403 Forbidden | Incorrect or missing API keys lead to an error at authentification. \ \ Content-Type: application/json \ { \ "message" => "This API call is unauthorized. Please contact your account manager." \ }|
+| 404 Not Found | Incorrect URL, routing endpoint could not be found. \ \ Content-Type: application/json \ { \ "message" => "Invalid API call." \ }|
+| 405 Method Not Allowed | Incorrect HTTP procedure. \ \ Content-Type: application/json \ { \ "message" => "Invalid API call." \ }|
+| 422 Unprocessable Entity | URL parameters could not be found. \ \ Content-Type: application/json \ { \ "message" => "Invalid API parameters." \ } \ \ Content type: application/json \ { \ "message" => "External product id not found." \ } \ \ Content type: application\ json \ { \ "message" => "Token not found." \ } |
+| 500 Internal Server Error | Unexpected server error. The request should be repeated with some delay. |
+| Keine Response | Possible timeouts. The request should be repeated with some delay. |
 
 ## 8. Contact
 For any question regarding the technical implementation of the Sovendus API for products with external order routes please contact Sovendus via e-mail oder phone.
