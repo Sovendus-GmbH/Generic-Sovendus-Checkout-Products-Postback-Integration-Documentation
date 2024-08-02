@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.\  \
+Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.<br> <br>
 To achieve this, Sovendus transfers a generic token with any request of your landing page URL. This token is the base of order registration at Sovendus. It is generated dynamically and therefore changes with every request. This token has to be picked out of the URL of your landing page, buffered und returned to Sovendus via a simple API call after completion of the transaction.
 
 > [!TIP]
@@ -26,7 +26,7 @@ Please keep your login credentials confidential. If you received this documentat
 
 ## 4. External Product-ID
 
-Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.\  \
+Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.<br> <br>
 You receive this Product-ID from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
 ## 5. Token
@@ -64,7 +64,7 @@ The URL of the API call is composed as follows:
 > **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)
 > **token**: Enter token transferred by Sovendus (paragraph 5)
 
-The HTTP procedure of the interface request has to be POST.\  \
+The HTTP procedure of the interface request has to be POST.<br> <br>
 To authentificate the API call, an alphanumerical API key is required additionally to the parameters within the URL. This key is transferred within the request body of the request. You receive this API key directly from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
 > [!EXAMPLE]
