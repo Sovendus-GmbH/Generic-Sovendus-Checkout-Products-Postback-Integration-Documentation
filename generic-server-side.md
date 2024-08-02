@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.\ \
+Sovendus displays your product following some transaction process (e.g. order checkout) at its numerous partners. To be able to register your orders properly and assign them correctly to our respective advertising partners, Sovendus offers the possibility to transmit your generated orders via API call.\  \
 To achieve this, Sovendus transfers a generic token with any request of your landing page URL. This token is the base of order registration at Sovendus. It is generated dynamically and therefore changes with every request. This token has to be picked out of the URL of your landing page, buffered und returned to Sovendus via a simple API call after completion of the transaction.
 
 > [!TIP]
@@ -26,7 +26,7 @@ Please keep your login credentials confidential. If you received this documentat
 
 ## 4. External Product-ID
 
-Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.\ \
+Every campaign at Sovendus receives its own fixed alphanumerical Product-ID. This Product-ID has to be added to the API call transfer. The Product-ID is permanently assigned to your product.\  \
 You receive this Product-ID from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
 ## 5. Token
@@ -64,7 +64,7 @@ The URL of the API call is composed as follows:
 > **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)
 > **token**: Enter token transferred by Sovendus (paragraph 5)
 
-The HTTP procedure of the interface request has to be POST.\ \
+The HTTP procedure of the interface request has to be POST.\  \
 To authentificate the API call, an alphanumerical API key is required additionally to the parameters within the URL. This key is transferred within the request body of the request. You receive this API key directly from your contact at Sovendus or you can learn it from paragraph 2 of this documentation.
 
 > [!EXAMPLE]
@@ -77,11 +77,11 @@ To authentificate the API call, an alphanumerical API key is required additional
 
 | HTTP – Status | Description |
 |----------------------|----------------------|
-| 200 OK | To succesful requests the API responds with the external Product-ID and the token from the URL. \ \ Content-Type: application/json \ { \ "externalProductId":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" \ "sovReqToken":"XXXXXX-XXXXX-XXXX-XXXXXXX" \ }|
-| 403 Forbidden | Incorrect or missing API keys lead to an error at authentification. \ \ Content-Type: application/json \ { \ "message" => "This API call is unauthorized. Please contact your account manager." \ }|
-| 404 Not Found | Incorrect URL, routing endpoint could not be found. \ \ Content-Type: application/json \ { \ "message" => "Invalid API call." \ }|
-| 405 Method Not Allowed | Incorrect HTTP procedure. \ \ Content-Type: application/json \ { \ "message" => "Invalid API call." \ }|
-| 422 Unprocessable Entity | URL parameters could not be found. \ \ Content-Type: application/json \ { \ "message" => "Invalid API parameters." \ } \ \ Content type: application/json \ { \ "message" => "External product id not found." \ } \ \ Content type: application\ json \ { \ "message" => "Token not found." \ } |
+| 200 OK | To succesful requests the API responds with the external Product-ID and the token from the URL. <br> <br> Content-Type: application/json <br> { <br> "externalProductId":"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXX" <br> "sovReqToken":"XXXXXX-XXXXX-XXXX-XXXXXXX" <br> }|
+| 403 Forbidden | Incorrect or missing API keys lead to an error at authentification. <br> <br> Content-Type: application/json <br> { <br> "message" => "This API call is unauthorized. Please contact your account manager." <br> }|
+| 404 Not Found | Incorrect URL, routing endpoint could not be found. <br> <br> Content-Type: application/json <br> { <br> "message" => "Invalid API call." <br> }|
+| 405 Method Not Allowed | Incorrect HTTP procedure. <br> <br> Content-Type: application/json <br> { <br> "message" => "Invalid API call." <br> }|
+| 422 Unprocessable Entity | URL parameters could not be found. <br> <br> Content-Type: application/json <br> { <br> "message" => "Invalid API parameters." <br> } <br> <br> Content type: application/json <br> { <br> "message" => "External product id not found." <br> } <br> <br> Content type: application<br> json <br> { <br> "message" => "Token not found." <br> } |
 | 500 Internal Server Error | Unexpected server error. The request should be repeated with some delay. |
 | Keine Response | Possible timeouts. The request should be repeated with some delay. |
 
