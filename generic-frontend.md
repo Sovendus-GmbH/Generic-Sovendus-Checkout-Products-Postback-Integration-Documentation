@@ -1,4 +1,4 @@
-# Documentation for the integration of the billing pixel for Sovendus
+# Sovendus Checkout Products Postback - generic frontend
 
 ## 1. Introduction
 
