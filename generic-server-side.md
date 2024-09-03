@@ -8,18 +8,15 @@ To achieve this, Sovendus transfers a generic token with any request of your lan
 
 > [!INFO]
 > Prerequisite for a successful cooperation is the return transfer of the token.
->
 > Without a proper back transfer, the Sovendus algorithm is not able to handle your product as intended. As a
 > result, your product won’t be displayed on our advertising partners‘ pages any more, just few days after.
 
 ## 2. Login credentials
 
-Please keep your login credentials confidential. If you received this documentation in advance, your credentials will be sent to you by your contact at Sovendus.
+
 
 > [!WARNING]
-> Product-ID:
->
-> API key:
+> Please keep your login credentials confidential (Product-ID and API key). Your credentials will be sent to you by your contact at Sovendus.
 
 ## 3. Workflow
 
@@ -35,20 +32,23 @@ You receive this Product-ID from your contact at Sovendus or you can learn it fr
 
 With every click on your product teaser image an ampersand (&) and the parameter **sovReqToken** will be added to the URL of your landing page by default. The alphanumerical value of the sovReqToken parameter is dynamic and changes with every new click on your product. The token has to be picked out of the URL by you, buffered and transferred back to Sovendus via API call after completion of the transaction.
 
-> [!EXAMPLE] > https://www.website.com/landingpage?channel=sovendus&sovReqToken=XXXXX-XXXXX-XXX-XXXXX
->
-> URL of your landingpage: https://www.website.com/landingpage?channel=sovendus  
-> Token: sovReqToken=XXXXX-XXXXX-XXX-XXXXX
+### Example
+
+https://www.website.com/landingpage?channel=sovendus&sovReqToken=XXXXX-XXXXX-XXX-XXXXX
+
+URL of your landingpage: https://www.website.com/landingpage?channel=sovendus \
+Token: sovReqToken=XXXXX-XXXXX-XXX-XXXXX
 
 > [!INFO]
 > The parameter **sovReqToken** can be renamed by request. Please inform Sovendus about this.
->
-> Syntax of token value
->
-> - The test token should have the structure of a regular token (aaaaa-aaaa-aaa-aaaaa)
-> - The test token should contain a hint that this is actual a test token (e.g., aaaaa-test-aaa-aaaaa)
-> - The test token should contain the "code" "test" as a second part, e.g., this should be accepted test tokens - 11111-test-111-11111 - fffff-test-fff-fffff - 12345-test-123-12345 - 1a2b3-test-1a2-1a2b3  
->   If the test token and all other parameters are valid, the API will return the regular 200 response.
+
+### Syntax of token value
+
+- The test token should have the structure of a regular token (aaaaa-aaaa-aaa-aaaaa)
+- The test token should contain a hint that this is actual a test token (e.g., aaaaa-test-aaa-aaaaa)
+- The test token should contain the "code" "test" as a second part, e.g., this should be accepted test tokens - 11111-test-111-11111 - fffff-test-fff-fffff - 12345-test-123-12345 - 1a2b3-test-1a2-1a2b3  
+
+If the test token and all other parameters are valid, the API will return the regular 200 response.
 
 ## 6. API call
 
@@ -58,10 +58,10 @@ With every click on your product teaser image an ampersand (&) and the parameter
 
 The URL of the API call is composed as follows:
 
-> https://press-order-api.sovendus.com/ext/<b>externalProduct-ID</b>/<b>token</b>/api
->
-> **externalProduct-ID**: Enter external Product-ID of corresponding product campaign (paragraph 4)  
-> **token**: Enter token transferred by Sovendus (paragraph 5)
+https://press-order-api.sovendus.com/ext/{externalProductID}/{token}/api
+
+**externalProductID**: Enter external Product-ID of corresponding product campaign (paragraph 4) \
+**token**: Enter token transferred by Sovendus (paragraph 5)
 
 The HTTP procedure of the interface request has to be POST.
 
